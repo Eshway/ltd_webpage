@@ -8,6 +8,7 @@ import FooterSection from '@/components/sections/footer-section';
 import { HeroScrollDemo } from '@/components/sections/hero-scroll-section';
 import { FeaturesSectionDemo } from '@/components/sections/features-section-demo';
 import { GoogleGeminiEffectDemo } from '@/components/sections/gemini-hero-section';
+import PricingSection from '@/components/sections/pricing-section';
 import Head from 'next/head';
 import StructuredData from '@/components/structured-data';
 
@@ -30,6 +31,7 @@ export default function Home() {
         {/* <GoogleGeminiEffectDemo /> */}
         {/* <FeaturesSection /> */}
         <FeaturesSectionDemo />
+        <PricingSection />
         <DemoSection />
         <BetaSignupSection />
         <InvestorSection />
