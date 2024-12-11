@@ -64,6 +64,7 @@ export const GoogleGeminiEffect = ({
                                         opacity,
                                     }} className="text-4xl dark:text-white relative z-120 md:text-[6rem] font-bold mt-1 leading-none">
                                     LTD
+                                    {/* <Image src="/ltd-logo.png" alt="" width={80} height={80} /> */}
                                 </motion.div>
                             </h1>
                         </>

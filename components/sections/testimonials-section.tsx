@@ -13,10 +13,10 @@ const testimonials = [
     content: 'We’re excited about LTD’s potential to revolutionize how we manage projects. The promise of real-time tracking and intelligent automation could drastically improve how we allocate resources and ensure timely project delivery.',
   },
   {
-    name: 'Michael Chen',
-    role: 'Product Lead at InnovateCo',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop&q=60',
-    content: "LTD’s AI-powered tracking and automation features have the potential to give us deeper insights into project progress and boost productivity. We’re eager to see the impact it can have on our team's efficiency.",
+    name: 'Abhinav Srivastava',
+    role: 'Business Analyst at Patient Billing Ltd',
+    image: 'https://png.pngtree.com/png-vector/20220709/ourmid/pngtree-businessman-user-avatar-wearing-suit-with-red-tie-png-image_5809521.png',
+    content: "I am excited to see LTD spread its wings. The most important aspect of the tool that I am thrilled about is the integration of AI and ML in decision making and backlog item selection. The clean UI interface and easy functionality will definitely intrigue existing and aspiring project management professionals to streamline their new and existing agile projects.",
   },
   {
     name: 'Emily Rodriguez',

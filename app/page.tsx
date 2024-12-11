@@ -9,11 +9,13 @@ import { HeroScrollDemo } from '@/components/sections/hero-scroll-section';
 import { FeaturesSectionDemo } from '@/components/sections/features-section-demo';
 import { GoogleGeminiEffectDemo } from '@/components/sections/gemini-hero-section';
 import Head from 'next/head';
+import StructuredData from '@/components/structured-data';
 
 export default function Home() {
   return (
     <>
       <Head>
+        <StructuredData />
         <title>LTD - Live Tracking Dashboard</title>
         <meta name="description" content="Track your projects in real time with LTD. Stay on top of every task and manage your teams efficiently." />
         <meta property="og:title" content="LTD - Live Tracking Dashboard" />

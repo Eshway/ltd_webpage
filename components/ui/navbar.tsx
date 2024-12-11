@@ -5,7 +5,7 @@ import { motion, useScroll } from 'framer-motion';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
-import logo from '@/components/assets/logo.png'
+// import logo from '@/components/assets/logo.png'
 import white_logo from '@/components/assets/white_logo.png'
 import Image from 'next/image';
 
@@ -49,9 +49,11 @@ export default function Navbar() {
                             {/* <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600"> */}
                             {/* LTD */}
                             {mounted && theme === 'light' ? (
-                                <Image src={logo} alt="" width={50} height={50} />
+                                <Image src="/ltd-logo.png" alt="" width={50} height={50} />
+                                // <Image src={logo} alt="" width={50} height={50} />
                             ) : (
-                                <Image src={white_logo} alt="" width={50} height={50} />
+                                <Image src="/ltd-logo_white.png" alt="" width={50} height={50} />
+                                // <Image src={white_logo} alt="" width={50} height={50} />
                             )}
                             {/* </span> */}
                         </Link>
