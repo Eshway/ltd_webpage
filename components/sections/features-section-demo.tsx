@@ -137,7 +137,7 @@ export const SkeletonOne = () => {
 export const SkeletonThree = () => {
     return (
         <Link
-            href="https://www.youtube.com/watch?v=RPa3_AD1_Vs"
+            href="https://www.youtube.com/watch?v=QrvbPccez4s&feature=youtu.be"
             target="__blank"
             className="relative flex gap-10  h-full group/image"
         >
@@ -145,7 +145,8 @@ export const SkeletonThree = () => {
                 <div className="flex flex-1 w-full h-full flex-col space-y-2  relative">
                     {/* TODO */}
                     {/* <IconBrandYoutubeFilled className="h-20 w-20 absolute z-10 inset-0 text-red-500 m-auto " /> */}
-                    <Brain className="hidden group-hover:block h-20 w-20 absolute z-10 inset-0 text-[#d86dfc] m-auto" />
+                    {/* <Brain className="hidden group-hover:block h-20 w-20 absolute z-10 inset-0 text-[#d86dfc] m-auto" /> */}
+                    <Image src="/ltd-logo.png" alt="ltd-logo" width={800} height={800} className="hidden group-hover:block h-20 w-20 absolute z-10 inset-0 text-[#d86dfc] m-auto" />
                     <Image
                         src={ai}
                         alt="header"
