@@ -27,7 +27,7 @@ export default function HeroSection() {
           <h1 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-purple-600">
             Revolutionizing Project Management with AI
           </h1>
-          
+
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             The ultimate platform for tracking, automating, and scaling your business—all in real time.
           </p>
@@ -36,8 +36,8 @@ export default function HeroSection() {
             <Button size="lg" className="bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700">
               Join the Beta Waitlist
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
               onClick={handleDemoClick}
               className="group"

@@ -66,7 +66,7 @@ export default function BetaSignupSection() {
               </div>
               <Button
                 type="submit"
-                className="w-full bg-gradient-to-r from-[#d86dfc] to-[#a756c2] hover:from-purple-700 hover:to-blue-700"
+                className="w-full bg-gradient-to-r from-[#d86dfc] to-[#a756c2] hover:from-[#d86dfc]/50 hover:to-[#a756c2]/50 text-white"
               >
                 Join Beta Waitlist
               </Button>

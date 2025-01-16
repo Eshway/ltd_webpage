@@ -92,10 +92,10 @@ export default function PricingSection() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.6 }}
                         >
-                            <Card className={`p-8 h-full flex flex-col justify-between relative ${plan.popular ? 'border-2 border-purple-500' : ''
+                            <Card className={`p-8 h-full flex flex-col justify-between relative ${plan.popular ? 'border-2 border-[#d86dfc]' : ''
                                 }`}>
                                 {plan.popular && (
-                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-purple-500 text-white px-4 py-1 rounded-full text-sm">
+                                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#d86dfc] text-white px-4 py-1 rounded-full text-sm">
                                         Most Popular
                                     </div>
                                 )}
@@ -117,8 +117,8 @@ export default function PricingSection() {
                                 </div>
                                 <Button
                                     className={`w-full ${plan.popular
-                                        ? 'bg-purple-500 hover:bg-purple-600'
-                                        : ''
+                                        ? 'bg-gradient-to-r from-[#d86dfc] to-[#a756c2] hover:from-[#a756c2] hover:to-[#d86dfc] hover:transition-all transition-all text-white'
+                                        : 'bg-[#d86dfc]/80 hover:bg-[#a756c2]/80 hover:transition-all transition-all text-white'
                                         }`}
                                     variant={plan.popular ? 'default' : 'outline'}
                                 >

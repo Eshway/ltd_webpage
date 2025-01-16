@@ -3,6 +3,8 @@ import { useScroll, useTransform } from "framer-motion";
 import React from "react";
 import { GoogleGeminiEffect } from "../ui/google-gemini-effect";
 import Navbar from "../ui/navbar";
+import { Safari } from "../ui/safari";
+import { Button } from "../ui/button";
 
 export function HeroScrollDemo() {
   const ref = React.useRef(null);
@@ -34,6 +36,7 @@ export function HeroScrollDemo() {
           ]}
         />
       </div>
+
     </div>
   );
 }

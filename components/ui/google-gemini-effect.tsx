@@ -1,11 +1,10 @@
 "use client";
+import hero from '@/components/assets/hero.png';
 import { cn } from "@/lib/utils";
 import { motion, MotionValue, useScroll, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 import { ContainerScroll } from "./container-scroll-animation";
-import Navbar from "./navbar";
-import hero from '@/components/assets/hero.png';
 const transition = {
     duration: 0,
     ease: "linear",

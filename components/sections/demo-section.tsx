@@ -22,7 +22,7 @@ export default function DemoSection() {
             <DialogTrigger asChild>
               <Button
                 size="lg"
-                className="group relative bg-gradient-to-r from-[#d86dfc] to-[#a756c2] hover:from-[#a756c2] hover:to-[#d86dfc] hover:transition-all transition-all"
+                className="group relative bg-gradient-to-r from-[#d86dfc] to-[#a756c2] hover:from-[#a756c2] hover:to-[#d86dfc] hover:transition-all transition-all text-white"
               >
                 <Play className="mr-2 h-5 w-5 transition-transform group-hover:scale-110" />
                 Watch Demo Video

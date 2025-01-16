@@ -1,12 +1,11 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import { motion, useScroll } from 'framer-motion';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import Link from 'next/link';
+import { Menu, Moon, Sun, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 // import logo from '@/components/assets/logo.png'
-import white_logo from '@/components/assets/white_logo.png'
 import Image from 'next/image';
 
 const navItems = [

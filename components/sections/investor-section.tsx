@@ -51,7 +51,7 @@ export default function InvestorSection() {
             >
               <Card className="p-6 text-center h-full bg-card/50 backdrop-blur-sm">
                 <motion.p
-                  className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#d86dfc] to-blue-600"
+                  className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#d86dfc] to-[#d86dfc]/50"
                   initial={{ scale: 0.5 }}
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true }}
