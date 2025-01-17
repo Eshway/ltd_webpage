@@ -5,7 +5,6 @@ import { Menu, Moon, Sun, X } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-// import logo from '@/components/assets/logo.png'
 import Image from 'next/image';
 
 const navItems = [
@@ -16,7 +15,7 @@ const navItems = [
     { name: 'Investors', href: '#investors' },
 ];
 
-export default function Navbar() {
+export default function Navbar({ variant = 'default' }) {
     const [isOpen, setIsOpen] = useState(false);
     const [mounted, setMounted] = useState(false);
     const { scrollY } = useScroll();
@@ -34,6 +33,18 @@ export default function Navbar() {
         setTheme(theme === 'dark' ? 'light' : 'dark');
     };
 
+    // Navigation items based on variant
+    const navItems =
+        variant === 'default'
+            ? [
+                { name: 'Features', href: '#features' },
+                { name: 'Pricing', href: '#pricing' },
+                { name: 'Demo', href: '#demo-section' },
+                { name: 'Beta', href: '#beta' },
+                { name: 'Investors', href: '#investors' },
+            ]
+            : []; // No nav items for login/signup page
+
     return (
         <motion.nav
             className={`fixed w-full p-2 z-50 transition-all duration-300 ${scrolled ? 'bg-background/80 backdrop-blur-lg shadow-lg' : 'bg-transparent'
@@ -46,16 +57,11 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
                         <Link href="/" className="flex items-center">
-                            {/* <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-blue-600"> */}
-                            {/* LTD */}
                             {mounted && theme === 'light' ? (
                                 <Image src="/ltd-logo.png" alt="" width={50} height={50} />
-                                // <Image src={logo} alt="" width={50} height={50} />
                             ) : (
                                 <Image src="/ltd-logo_white.png" alt="" width={50} height={50} />
-                                // <Image src={white_logo} alt="" width={50} height={50} />
                             )}
-                            {/* </span> */}
                         </Link>
                     </div>
 
@@ -71,6 +77,32 @@ export default function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
+                            {variant === 'login' && (
+                                <>
+                                    <span
+                                        // href="/login"
+                                        className="text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
+                                        onClick={() => {
+                                            //alert with cmoing soon message
+                                            alert('Coming soon!');
+                                        }
+                                        }
+                                    >
+                                        Login
+                                    </span>
+                                    <span
+                                        // href="/signup"
+                                        className="text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
+                                        onClick={() => {
+                                            //alert with cmoing soon message
+                                            alert('Coming soon!');
+                                        }
+                                        }
+                                    >
+                                        Sign Up
+                                    </span>
+                                </>
+                            )}
                             <button
                                 onClick={toggleTheme}
                                 className="p-2 rounded-full hover:bg-foreground/10 transition-colors"
@@ -90,11 +122,7 @@ export default function Navbar() {
                             onClick={() => setIsOpen(!isOpen)}
                             className="p-2 rounded-md hover:bg-foreground/10 transition-colors"
                         >
-                            {isOpen ? (
-                                <X className="h-6 w-6" />
-                            ) : (
-                                <Menu className="h-6 w-6" />
-                            )}
+                            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
                         </button>
                     </div>
                 </div>
@@ -118,6 +146,35 @@ export default function Navbar() {
                             {item.name}
                         </Link>
                     ))}
+                    {variant === 'login' && (
+                        <>
+
+                            <span
+                                // href="/login"
+                                className="block px-3 py-2 rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/10 transition-colors"
+                                onClick={() => {
+                                    //alert with cmoing soon message
+                                    alert('Coming soon!');
+                                    setIsOpen(false)
+                                }
+                                }
+                            >
+                                Login
+                            </span>
+                            <span
+                                // href="/signup"
+                                className="block px-3 py-2 rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/10 transition-colors"
+                                onClick={() => {
+                                    //alert with cmoing soon message
+                                    alert('Coming soon!');
+                                    setIsOpen(false)
+                                }
+                                }
+                            >
+                                Sign Up
+                            </span>
+                        </>
+                    )}
                     <button
                         onClick={toggleTheme}
                         className="w-full text-left px-3 py-2 rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/10 transition-colors"

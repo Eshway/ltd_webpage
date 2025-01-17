@@ -10,6 +10,25 @@ const ReactQuill = dynamic(() => import('react-quill'), {
     loading: () => <p>Loading editor...</p>,
 });
 
+const modules = {
+    toolbar: [
+        [{ 'header': [1, 2, 3, false] }],
+        ['bold', 'italic', 'underline', 'strike'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+        ['blockquote', 'code-block'],
+        ['link', 'image'],
+        ['clean']
+    ],
+};
+
+const formats = [
+    'header',
+    'bold', 'italic', 'underline', 'strike',
+    'list', 'bullet',
+    'blockquote', 'code-block',
+    'link', 'image'
+];
+
 export default function AdminBlogs() {
     const [blogs, setBlogs] = useState<any[]>([]);
     const [form, setForm] = useState({
@@ -169,7 +188,9 @@ export default function AdminBlogs() {
                     <ReactQuill
                         value={form.content}
                         onChange={(value) => setForm({ ...form, content: value })}
-                        className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm"
+                        modules={modules}
+                        formats={formats}
+                        className="mt-1 block w-full h-[300px] mb-12"
                     />
                     {/* <textarea
                         name="content"
