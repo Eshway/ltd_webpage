@@ -17,7 +17,12 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            gtag('config', '${GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+              stream_id: '10160486836',
+              stream_name: 'LTD',
+              site_url: 'https://ltd.eshway.com'
+            });
           `,
                 }}
             />
