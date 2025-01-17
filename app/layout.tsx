@@ -3,6 +3,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import StructuredData from '@/components/structured-data';
+import GoogleAnalytics from '@/components/google-analytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -37,6 +38,9 @@ export const metadata: Metadata = {
     description: "Transform your project management with LTD's AI-driven platform. Real-time tracking, automated workflows, and intelligent resource allocation for modern teams.",
     images: ['https://ltd.eshway.com/_next/static/media/hero.622d2353.png'],
   },
+  alternates: {
+    canonical: 'https://ltd.eshway.com',
+  },
   robots: {
     index: true,
     follow: true,
@@ -50,6 +54,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: 'your-google-verification-code',
+    other: {
+      'google-analytics': 'G-B9Q1YPWKVG'
+    }
   },
 };
 export default function RootLayout({
@@ -68,6 +75,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="theme-color" content="#ffffff" />
         <StructuredData />
+        <GoogleAnalytics GA_MEASUREMENT_ID="G-B9Q1YPWKVG" />
       </head>
       <body className={inter.className}>
         <ThemeProvider

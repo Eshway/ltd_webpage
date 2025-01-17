@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Play, XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 type AnimationStyle =
     | "from-bottom"
@@ -84,7 +85,7 @@ export function HeroVideoDialog({
                 className="group relative cursor-pointer"
                 onClick={() => setIsVideoOpen(true)}
             >
-                <img
+                <Image
                     src={thumbnailSrc}
                     alt={thumbnailAlt}
                     width={1920}

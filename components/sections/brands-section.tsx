@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 // const brands = [
 //     'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Microsoft_logo.svg/1200px-Microsoft_logo.svg.png',
@@ -46,7 +47,7 @@ const BrandsSection = () => {
                                 key={index}
                                 className="inline-block justify-center align-middle items-center flex-shrink-0 w-[200px] mx-8 transition-transform duration-300 ease-in-out transform hover:scale-110"
                             >
-                                <img
+                                <Image
                                     src={brand.logo || "/placeholder.svg"}
                                     alt={brand.name}
                                     width={100}

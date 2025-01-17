@@ -1,5 +1,6 @@
 import Navbar from '@/components/ui/navbar';
 import { PrismaClient } from '@prisma/client';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
 const prisma = new PrismaClient();
@@ -94,7 +95,9 @@ export default async function BlogPage({ params }: { params: { slug: string } })
                 />
 
                 <div className="mt-10 flex items-center">
-                    <img
+                    <Image
+                        width={100}
+                        height={100}
                         src={blog.author.image}
                         alt={blog.author.name}
                         className="w-12 h-12 rounded-full object-cover mr-4"
