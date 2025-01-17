@@ -1,12 +1,13 @@
 'use client'
 
-import { useEffect, useState } from 'react';
-import Navbar from '@/components/ui/navbar';
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Loader2, SearchIcon } from "lucide-react";
-import { Blog } from '@prisma/client';
 import { BlogCard } from '@/components/blog-card';
+import { Input } from "@/components/ui/input";
+import Navbar from '@/components/ui/navbar';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Blog } from '@prisma/client';
+import { Loader2, SearchIcon } from "lucide-react";
+import { useEffect, useState } from 'react';
+
 const Blogs = () => {
     const [blogs, setBlogs] = useState<Blog[]>([]);
     const [isLoading, setIsLoading] = useState(true);

@@ -29,11 +29,29 @@ export async function generateMetadata({ params }: { params: { slug: string } })
         };
     }
 
+    // Create a summary from the content
+    const summary = blog.content.slice(0, 155) + '...';
+
     return {
-        title: `${blog.title} | Blog`,
-        description: `Read about ${blog.title}`,
+        title: `${blog.title} | LTD Blog`,
+        description: summary,
         keywords: blog.tags.join(', '),
         authors: [{ name: blog.author.name }],
+        openGraph: {
+            title: blog.title,
+            description: summary,
+            type: 'article',
+            publishedTime: blog.createdAt.toISOString(),
+            modifiedTime: blog.updatedAt.toISOString(),
+            authors: [blog.author.name],
+            tags: blog.tags,
+        },
+        twitter: {
+            card: 'summary_large_image',
+            title: blog.title,
+            description: summary,
+            creator: '@ltd_app',
+        },
     };
 }
 
@@ -87,5 +105,39 @@ export default async function BlogPage({ params }: { params: { slug: string } })
                 </div>
             </div>
         </div>
+    );
+}
+
+function BlogStructuredData({ blog }: { blog: any }) {
+    const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": blog.title,
+        "description": blog.content.slice(0, 155),
+        "author": {
+            "@type": "Person",
+            "name": blog.author.name,
+            "image": blog.author.image
+        },
+        "datePublished": blog.createdAt,
+        "dateModified": blog.updatedAt,
+        "keywords": blog.tags.join(', '),
+        "articleBody": blog.content,
+        "timeRequired": `PT${blog.readingTime}M`,
+        "publisher": {
+            "@type": "Organization",
+            "name": "LTD",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://ltd.eshway.com/logo.png"
+            }
+        }
+    };
+
+    return (
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
     );
 }
