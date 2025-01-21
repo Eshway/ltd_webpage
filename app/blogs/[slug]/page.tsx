@@ -82,7 +82,7 @@ export default async function BlogPage({ params }: { params: { slug: string } })
                     {blog.tags.map((tag, index) => (
                         <span
                             key={index}
-                            className="text-xs bg-[#d86dfc]/20 text-[#d86dfc] dark:bg-[#d86dfc] dark:text-black px-2 py-1 rounded-full"
+                            className="text-xs bg-[#d86dfc]/20 text-[#d86dfc] dark:bg-[#d86dfc] dark:text-white px-2 py-1 rounded-full"
                         >
                             {tag}
                         </span>
