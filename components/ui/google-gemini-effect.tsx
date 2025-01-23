@@ -5,6 +5,7 @@ import { motion, MotionValue, useScroll, useSpring, useTransform } from "framer-
 import Image from "next/image";
 import React from "react";
 import { ContainerScroll } from "./container-scroll-animation";
+import { MorphingText } from './morphing-text';
 const transition = {
     duration: 0,
     ease: "linear",
@@ -62,7 +63,7 @@ export const GoogleGeminiEffect = ({
                                         translateY,
                                         opacity,
                                     }} className="text-4xl dark:text-white relative z-120 md:text-[6rem] font-bold mt-1 leading-none">
-                                    LTD
+                                    <MorphingText texts={['LTD', 'Live Tracking Dashboard']}></MorphingText>
                                     {/* <Image src="/ltd-logo.png" alt="" width={80} height={80} /> */}
                                 </motion.div>
                             </h1>

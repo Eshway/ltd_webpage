@@ -1,17 +1,14 @@
 'use client';
-import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import React from "react";
 // import createGlobe from "cobe";
-import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 // import { IconBrandYoutubeFilled } from "@tabler/icons-react";
+import ai from '@/components/assets/ai.png';
+import hero from '@/components/assets/hero.png';
+import talent from '@/components/assets/talent.jpg';
 import Link from "next/link";
-import hero from '@/components/assets/hero.png'
-import ai from '@/components/assets/ai.png'
-import marketplace from '@/components/assets/marketplace.png'
-import talent from '@/components/assets/talent.jpg'
-import { Brain } from "lucide-react";
 
 export function FeaturesSectionDemo() {
     const features = [
@@ -47,11 +44,12 @@ export function FeaturesSectionDemo() {
         },
     ];
     return (
-        <div className="relative z-20 py-10 lg:py-40 max-w-7xl mx-auto" id="features">
+        <div className="relative py-10 z-20 lg:py-40 max-w-7xl mx-auto" id="features">
             <div className="px-8">
-                <h4 className="text-3xl lg:text-5xl lg:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium text-black dark:text-white">
+                <div className="text-3xl lg:text-5xl lg:leading-tight tracking-tight text-center font-medium bg-gradient-to-r from-[#00D1FF] via-[#9F7AEA] to-[#d86dfc] bg-clip-text text-transparent dark:from-[#00B4D8] dark:via-[#6B46C1] dark:to-[#d86dfc]">
                     Packed with thousands of features
-                </h4>
+                </div>
+
 
                 <p className="text-sm lg:text-base  max-w-2xl  my-4 mx-auto text-neutral-500 text-center font-normal dark:text-neutral-300">
                     AI provides real-time insights, automate task management, and streamline project workflows. From intelligent project setup to
