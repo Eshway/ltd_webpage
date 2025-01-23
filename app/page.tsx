@@ -1,3 +1,4 @@
+'use client'
 import BetaSignupSection from '@/components/sections/beta-signup-section';
 import BrandsSection from '@/components/sections/brands-section';
 import { HeroVideoDialogDemo } from '@/components/sections/demo-video-section';
@@ -8,26 +9,19 @@ import InvestorSection from '@/components/sections/investor-section';
 import PricingSection from '@/components/sections/pricing-section';
 import { SafariSection } from '@/components/sections/safari-section';
 import TestimonialsSection from '@/components/sections/testimonials-section';
-import type { Metadata } from 'next';
+import { ReactLenis, useLenis } from 'lenis/react'
 
-export const metadata: Metadata = {
-  title: 'LTD - Live Tracking Dashboard',
-  description: 'Track your projects in real time with LTD. Stay on top of every task and manage your teams efficiently.',
-  openGraph: {
-    title: 'LTD - Live Tracking Dashboard',
-    description: 'Track your projects in real time with LTD. Stay on top of every task and manage your teams efficiently.',
-    images: ['https://ltd.eshway.com/images/og-image.png'],
-  },
-  twitter: {
-    title: 'LTD - Live Tracking Dashboard',
-    description: 'Track your projects in real time with LTD. Stay on top of every task and manage your teams efficiently.',
-    images: ['https://ltd.eshway.com/images/twitter-image.png'],
-  },
-};
 
 export default function Home() {
+  const lenis = useLenis();
   return (
-    <>
+    <ReactLenis root
+      options={{
+        duration: 1.2,
+        touchMultiplier: 2,
+        infinite: false,
+      }}
+    >
       <main className="min-h-screen bg-gradient-to-b from-background to-background/95">
         <HeroScrollDemo />
         {/* <GoogleGeminiEffectDemo /> */}
@@ -43,6 +37,6 @@ export default function Home() {
         <BetaSignupSection />
         <FooterSection />
       </main>
-    </>
+    </ReactLenis>
   );
 }

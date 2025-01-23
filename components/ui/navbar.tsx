@@ -6,6 +6,7 @@ import { useTheme } from 'next-themes';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { useLenis } from 'lenis/react'
 
 const navItems = [
     { name: 'Features', href: '#features' },
@@ -21,6 +22,7 @@ export default function Navbar({ variant = 'default' }) {
     const { scrollY } = useScroll();
     const [scrolled, setScrolled] = useState(false);
     const { theme, setTheme } = useTheme();
+    const lenis = useLenis()
 
     useEffect(() => {
         setMounted(true);
@@ -31,6 +33,23 @@ export default function Navbar({ variant = 'default' }) {
 
     const toggleTheme = () => {
         setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        setIsOpen(false); // Close mobile menu if open
+
+        // Extract the ID from href and find the element
+        const targetId = href.startsWith('#') ? href.substring(1) : href;
+        const element = document.getElementById(targetId);
+
+        if (element) {
+            lenis?.scrollTo(element, {
+                offset: -100,
+                duration: 1.5,
+                easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+            });
+        }
     };
 
     // Navigation items based on variant
@@ -72,6 +91,7 @@ export default function Navbar({ variant = 'default' }) {
                                 <Link
                                     key={item.name}
                                     href={item.href}
+                                    onClick={(e) => handleNavClick(e, item.href)}
                                     className="text-foreground/80 hover:text-foreground transition-colors"
                                 >
                                     {item.name}
@@ -82,22 +102,22 @@ export default function Navbar({ variant = 'default' }) {
                                     <span
                                         // href="/login"
                                         className="text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
-                                        onClick={() => {
+                                        onClick={(e) => {
                                             //alert with cmoing soon message
+                                            e.preventDefault();
                                             alert('Coming soon!');
-                                        }
-                                        }
+                                        }}
                                     >
                                         Login
                                     </span>
                                     <span
                                         // href="/signup"
                                         className="text-foreground/80 hover:text-foreground transition-colors cursor-pointer"
-                                        onClick={() => {
+                                        onClick={(e) => {
                                             //alert with cmoing soon message
+                                            e.preventDefault();
                                             alert('Coming soon!');
-                                        }
-                                        }
+                                        }}
                                     >
                                         Sign Up
                                     </span>
@@ -140,36 +160,38 @@ export default function Navbar({ variant = 'default' }) {
                         <Link
                             key={item.name}
                             href={item.href}
+                            onClick={(e) => {
+                                handleNavClick(e, item.href)
+                                setIsOpen(false)
+                            }}
                             className="block px-3 py-2 rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/10 transition-colors"
-                            onClick={() => setIsOpen(false)}
                         >
                             {item.name}
                         </Link>
                     ))}
                     {variant === 'login' && (
                         <>
-
                             <span
                                 // href="/login"
                                 className="block px-3 py-2 rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/10 transition-colors"
-                                onClick={() => {
+                                onClick={(e) => {
                                     //alert with cmoing soon message
+                                    e.preventDefault();
                                     alert('Coming soon!');
                                     setIsOpen(false)
-                                }
-                                }
+                                }}
                             >
                                 Login
                             </span>
                             <span
                                 // href="/signup"
                                 className="block px-3 py-2 rounded-md text-foreground/80 hover:text-foreground hover:bg-foreground/10 transition-colors"
-                                onClick={() => {
+                                onClick={(e) => {
                                     //alert with cmoing soon message
+                                    e.preventDefault();
                                     alert('Coming soon!');
                                     setIsOpen(false)
-                                }
-                                }
+                                }}
                             >
                                 Sign Up
                             </span>

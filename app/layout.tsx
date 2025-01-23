@@ -7,10 +7,7 @@ import GoogleAnalytics from '@/components/google-analytics';
 
 const inter = Inter({ subsets: ['latin'] });
 
-// export const metadata: Metadata = {
-//   title: 'LTD',
-//   description: 'Live Tracking Dashboard',
-// };
+
 export const metadata: Metadata = {
   metadataBase: new URL('https://ltd.eshway.com'),
   title: 'LTD - AI-Powered Project Management Platform',
