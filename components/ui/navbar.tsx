@@ -7,12 +7,13 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { useLenis } from 'lenis/react'
+import { useRouter } from 'next/navigation';
 
 const navItems = [
     { name: 'Features', href: '#features' },
     { name: 'Pricing', href: '#pricing' },
     { name: 'Demo', href: '#demo-section' },
-    { name: 'Beta', href: '#beta' },
+    { name: 'Beta', href: 'https://ltd-app.vercel.app/signup' },
     { name: 'Investors', href: '#investors' },
 ];
 
@@ -23,6 +24,7 @@ export default function Navbar({ variant = 'default' }) {
     const [scrolled, setScrolled] = useState(false);
     const { theme, setTheme } = useTheme();
     const lenis = useLenis()
+    const router = useRouter()
 
     useEffect(() => {
         setMounted(true);
@@ -36,6 +38,7 @@ export default function Navbar({ variant = 'default' }) {
     };
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        if (href.startsWith('http')) router.push("https://ltd.eshway.com/signup");
         e.preventDefault();
         setIsOpen(false); // Close mobile menu if open
 
@@ -59,8 +62,8 @@ export default function Navbar({ variant = 'default' }) {
                 { name: 'Features', href: '#features' },
                 { name: 'Pricing', href: '#pricing' },
                 { name: 'Demo', href: '#demo-section' },
-                { name: 'Beta', href: '#beta' },
                 { name: 'Investors', href: '#investors' },
+                { name: 'Beta', href: 'https://ltd.eshway.com/signup' },
             ]
             : []; // No nav items for login/signup page
 
@@ -87,16 +90,38 @@ export default function Navbar({ variant = 'default' }) {
                     {/* Desktop Navigation */}
                     <div className="hidden md:block">
                         <div className="ml-10 flex items-center space-x-8">
-                            {navItems.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    onClick={(e) => handleNavClick(e, item.href)}
-                                    className="text-foreground/80 hover:text-foreground transition-colors"
-                                >
-                                    {item.name}
-                                </Link>
-                            ))}
+                            {navItems.map((item) => {
+                                if (item.name === 'Beta') {
+                                    return (
+                                        // <button
+                                        //     key={item.name}
+                                        //     onClick={() => router.push("https://ltd-app.vercel.app/signup")}
+                                        //     className="text-foreground/80 hover:text-foreground transition-colors bg-[#d86dfc] p-2 px-4 rounded-md"
+                                        // >
+                                        //     {item.name}
+                                        // </button>
+                                        <button
+                                            key={item.name}
+                                            onClick={() => router.push("https://ltd-app.vercel.app/signup")}
+                                            className="hover:scale-110 transition-all relative inline-flex h-10 overflow-hidden rounded-lg p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                                            <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                                            <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-slate-950 px-7 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                                                {item.name}
+                                            </span>
+                                        </button>
+                                    )
+                                }
+                                return (
+                                    <Link
+                                        key={item.name}
+                                        href={item.href}
+                                        onClick={(e) => handleNavClick(e, item.href)}
+                                        className="text-foreground/80 hover:text-foreground transition-colors"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                )
+                            })}
                             {variant === 'login' && (
                                 <>
                                     <span

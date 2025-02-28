@@ -40,6 +40,23 @@ export default function BetaSignupSection() {
           transition={{ delay: 0.2, duration: 0.5 }}
           className="max-w-md mx-auto"
         >
+          <div className="w-full justify-center flex p-4 pt-0">
+            <a
+              href="https://ltd-app.vercel.app/signup"
+              className="w-full"
+            >
+              <button
+                className="hover:scale-105 transition-all relative w-full inline-flex h-10 overflow-hidden rounded-lg p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-lg bg-slate-150 px-7 py-1 text-sm font-medium text-white backdrop-blur-3xl">
+                  Beta is LIVE &nbsp;
+                  <span className="animate-ping">
+                    🔴
+                  </span>
+                </span>
+              </button>
+            </a>
+          </div>
           <Card className="p-6 backdrop-blur-sm bg-card/50 border-2 border-purple-500/20">
             <form action="https://formspree.io/f/mpwznwwv" method="POST" className="space-y-4">
               <div className="space-y-2">
@@ -68,7 +85,7 @@ export default function BetaSignupSection() {
                 type="submit"
                 className="w-full bg-gradient-to-r from-[#d86dfc] to-[#a756c2] hover:from-[#d86dfc]/50 hover:to-[#a756c2]/50 text-white"
               >
-                Join Beta Waitlist
+                Join Beta Newsletter
               </Button>
             </form>
           </Card>
