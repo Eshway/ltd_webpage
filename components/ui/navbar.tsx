@@ -38,7 +38,7 @@ export default function Navbar({ variant = 'default' }) {
     };
 
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-        if (href.startsWith('http')) router.push("https://ltd.eshway.com/signup");
+        if (href.startsWith('http')) router.push("https://ltd-app.vercel.app/signup");
         e.preventDefault();
         setIsOpen(false); // Close mobile menu if open
 
