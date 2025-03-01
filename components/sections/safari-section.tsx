@@ -72,6 +72,11 @@ export function SafariSection() {
         "/createProjects2.png",
         "/createProjects3.png"
     ];
+    const video = [
+        "/1.webm",
+        "/2.webm",
+        "/3.webm"
+    ]
 
     // Control the active feature based on scroll position
     const [activeIndex, setActiveIndex] = React.useState(0);
@@ -105,7 +110,9 @@ export function SafariSection() {
                             // height={753}
                             className="w-full h-auto"
                             url={features[activeIndex].url}
-                            imageSrc={images[activeIndex]}
+                            // imageSrc={images[activeIndex]}
+                            videoSrc={video[activeIndex]}
+                        // videoSrc="/1.webm"
                         />
                     </motion.div>
 
